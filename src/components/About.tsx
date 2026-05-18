@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code2, Server, Cpu } from "lucide-react";
+import { Code2, Server, Cpu, GraduationCap, Languages } from "lucide-react";
 
 export default function About() {
   const cards = [
@@ -36,11 +36,12 @@ export default function About() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
           <div className="w-20 h-1 bg-gradient-to-r from-accent to-accent-secondary mx-auto rounded-full mb-8"></div>
           <p className="text-gray-400 max-w-3xl mx-auto text-lg leading-relaxed">
-            I am a passionate Software Engineer based in Ahmedabad, Gujarat, specializing in creating high-performance web applications and intelligent AI-driven systems. With over 3 years of experience, I excel in transforming complex requirements into robust, scalable architectures.
+            I am a passionate Full-Stack Engineer based in Ahmedabad, Gujarat, with <span className="text-white font-medium">4+ years of professional experience</span> building scalable web applications and AI-integrated systems. I excel at architecting robust microservices, designing event-driven backends, and shipping LLM-powered features across production environments.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Expertise Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {cards.map((card, index) => (
             <motion.div
               key={card.title}
@@ -59,6 +60,61 @@ export default function About() {
               </p>
             </motion.div>
           ))}
+        </div>
+
+        {/* Education & Languages */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+          {/* Education Card */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6 }}
+            className="glass p-8 rounded-2xl border border-white/10"
+          >
+            <div className="flex items-center space-x-4 mb-6">
+              <div className="p-3 bg-accent/15 rounded-xl text-accent">
+                <GraduationCap className="w-6 h-6" />
+              </div>
+              <h3 className="text-2xl font-bold text-white">Education</h3>
+            </div>
+            <div className="border-l border-white/15 pl-4 ml-2 space-y-4">
+              <div>
+                <h4 className="text-lg font-bold text-white">Parul Institute of Technology</h4>
+                <p className="text-accent text-sm font-semibold">B.Tech in Computer Science and Engineering</p>
+                <div className="flex justify-between items-center text-gray-400 text-sm mt-1">
+                  <span>Graduated: 2019 -- 2023</span>
+                  <span className="font-mono text-accent-secondary">CGPA: 8.2</span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Languages Card */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6 }}
+            className="glass p-8 rounded-2xl border border-white/10"
+          >
+            <div className="flex items-center space-x-4 mb-6">
+              <div className="p-3 bg-accent-secondary/15 rounded-xl text-accent-secondary">
+                <Languages className="w-6 h-6" />
+              </div>
+              <h3 className="text-2xl font-bold text-white">Languages</h3>
+            </div>
+            <div className="flex flex-wrap gap-3 mt-4">
+              {["English", "Gujarati", "Hindi"].map((lang) => (
+                <span 
+                  key={lang}
+                  className="px-4 py-2 text-sm font-medium text-white bg-white/5 border border-white/10 rounded-xl hover:border-accent-secondary/50 transition-colors duration-300 cursor-default"
+                >
+                  {lang}
+                </span>
+              ))}
+            </div>
+          </motion.div>
         </div>
 
       </div>

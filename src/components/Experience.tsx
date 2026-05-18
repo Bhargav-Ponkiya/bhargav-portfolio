@@ -6,35 +6,35 @@ import Link from "next/link";
 
 const experiences = [
   {
-    company: "Upsquere",
+    company: "Upsquare Technologies",
     role: "Software Engineer",
     duration: "Feb 2026 – Present",
     location: "Ahmedabad, Gujarat",
     projects: [
       {
-        name: "SMG (Sway Me Good)",
-        tech: "Node.js, tRPC, GraphQL, AWS Lambda, DynamoDB, Nx Monorepo, Claude/OpenAI API",
-        desc: "Contributed to an Nx monorepo of 25 microservices. Built Loyalty and Campaign-Auth-Score services. Built an AI authenticity scoring engine using Claude/OpenAI API to quantify influencer-to-campaign fit, reducing manual effort. Implemented AWS Lambda scoring jobs with DynamoDB.",
+        name: "SMG (Sway Me Good) -- Influencer Marketing Platform",
+        tech: "Node.js, tRPC, GraphQL, AWS Lambda, DynamoDB, Nx Monorepo, Azure OpenAI API",
+        desc: "Contributed to an Nx monorepo of 25+ microservices; independently built two services end to end (Loyalty and Campaign-Auth-Score). Built an AI authenticity scoring engine using Azure OpenAI API that quantifies influencer-to-campaign fit and automates brand-team shortlisting via scheduled AWS Lambda jobs with results stored in DynamoDB.",
         links: [{ name: "Platform", url: "https://swaymegood.com/" }]
       },
       {
-        name: "VERSYS",
-        tech: "Node.js, Express, Claude Sonnet, Puppeteer, AWS S3, React, React Query, Tailwind",
-        desc: "Engineered an AI document pipeline combining Salus API with Claude Sonnet to auto-generate SSSP/EMP/PHA docs, rendered to PDF via Puppeteer to AWS S3. Added a React Query cached dashboard with certification expiry flags.",
+        name: "VERSYS -- Compliance & Document Management System",
+        tech: "Node.js, Express.js, Claude Sonnet, Puppeteer, AWS S3, React, React Query, Tailwind CSS",
+        desc: "Built a centralised compliance portal managing project records, worker lists, and certificates across multiple construction sites; implemented colour-coded certification expiry flags. Engineered an AI document pipeline combining Salus API with Claude Sonnet to auto-generate safety docs (SSSP, EMP, PHA) rendered as PDF via Puppeteer to AWS S3. Applied React Query caching with stale-time tuning to reduce unnecessary network load.",
       },
       {
-        name: "Spinoto",
+        name: "Spinoto -- Mechanic Booking Platform",
         tech: "React, Next.js, Tailwind CSS",
-        desc: "Led frontend for Spinoto admin panel and public landing page. Resolved backlog of bugs and UI issues across both interfaces, bringing the product to a stable production release.",
+        desc: "Delivered the admin panel and public landing page; led two junior developers, reviewed PRs, and drove the product to a stable production release. Improved performance by splitting components into Server and Client Components, reducing bundle sizes, and scoping API calls to eliminate data overfetching.",
         links: [
           { name: "Website", url: "https://spinoto.com" },
           { name: "Admin", url: "https://admin.spinoto.com/login" }
         ]
       },
       {
-        name: "SignPe",
+        name: "SignPe -- Payments Platform Backend",
         tech: "NestJS, PostgreSQL, TypeORM",
-        desc: "Designed RBAC with a normalised PostgreSQL schema. Built scalable RBAC backend with NestJS custom guards and decorators for SignPe payments platform.",
+        desc: "Architected a Role-Based Access Control (RBAC) system with a normalised PostgreSQL schema (roles, permissions, role-permission mapping) for scalable, fine-grained access management. Built reusable NestJS guards and decorators (@Roles(), @Permissions()) enabling declarative, route-level access control.",
         links: [{ name: "Platform", url: "https://signpe.com/" }]
       }
     ],
@@ -44,7 +44,7 @@ const experiences = [
     role: "Programmer Analyst",
     duration: "Dec 2022 – Jan 2026",
     location: "Ahmedabad, Gujarat",
-    desc: "Developed internal MERN-based web apps supporting QA automation workflows. Built EMP modules (Flatmate, Wall of Fame, Birthday Board). Integrated Socket.io for real-time tracking. Improved database throughput via Sequelize connection pooling and query optimization. Applied Worker Threads for CPU-heavy ops and benchmarked with JMeter.",
+    desc: "Developed and maintained internal MERN-stack web applications supporting QA automation workflows, used daily by multiple engineering teams. Shipped three Employee Management Portal modules from scratch -- Flatmate (room-sharing), Wall of Fame (peer recognition), and Birthday Board (team celebrations) -- using Node.js, Express, PostgreSQL, and React. Integrated Socket.io for real-time tracking of automation script progress and live activity feeds, improving visibility for QA teams. Optimised database throughput via Sequelize connection pooling and query tuning; reduced unnecessary re-renders using React.memo and useCallback. Offloaded CPU-intensive tasks using Worker Threads; benchmarked API performance under concurrent load with JMeter to identify and resolve bottlenecks.",
   },
   {
     company: "Codient Tech",
@@ -53,9 +53,9 @@ const experiences = [
     location: "Remote",
     projects: [
       {
-        name: "Dausto",
-        tech: "TypeScript, Express, MongoDB, React + Vite, Next.js, Formik, Zod, MSG91",
-        desc: "Delivered core modules across React admin and Next.js storefront. Implemented OTP-based auth with MSG91. Worked in an agile team using Jira/ClickUp.",
+        name: "Dausto -- E-Commerce Platform",
+        tech: "TypeScript, Express.js, MongoDB, React + Vite (Admin), Next.js (Storefront), Formik, Zod, MSG91",
+        desc: "Built core e-commerce modules (Dashboard, SEO Management, Orders, Testimonials, and Wishlist) across the React + Vite admin panel and Next.js storefront, backed by a TypeScript + Express + MongoDB API. Implemented Formik + Zod for form validation and MSG91 API for OTP-based auth and SMS notifications; collaborated in a 6-member agile team using Jira and ClickUp.",
         links: [
           { name: "Storefront", url: "https://dausto.com" },
           { name: "Admin", url: "https://admin.dausto.com" }
@@ -76,7 +76,7 @@ export default function Experience() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Experience</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Professional Journey</h2>
           <div className="w-20 h-1 bg-gradient-to-r from-accent to-accent-secondary mx-auto rounded-full mb-12"></div>
         </motion.div>
 

@@ -21,15 +21,19 @@ const skillCategories = [
   },
   {
     name: "Cloud & DevOps",
-    skills: ["AWS", "Docker", "CI/CD", "Render", "Vercel"],
+    skills: ["AWS (S3, Lambda, DynamoDB)", "Docker", "CI/CD", "Render", "Vercel"],
   },
   {
-    name: "Architecture & Tools",
-    skills: ["Microservices", "Event-Driven", "Nx Monorepo", "Git", "Postman", "Jira", "ClickUp", "Sequelize", "TypeORM"],
+    name: "Architecture & Protocols",
+    skills: ["Microservices", "Event-Driven Architecture", "RabbitMQ", "Nx Monorepo"],
   },
   {
-    name: "AI Integration",
-    skills: ["Claude API", "OpenAI API", "Gemini Flash API", "Vector Embeddings"],
+    name: "AI & LLM Integration",
+    skills: ["Azure OpenAI API", "Gemini API", "Claude API", "RAG", "Vector Embeddings", "SSE Streaming"],
+  },
+  {
+    name: "Tools & Libraries",
+    skills: ["Git", "Postman", "JMeter", "Jira", "ClickUp", "Sequelize", "Mongoose", "TypeORM"],
   },
 ];
 
