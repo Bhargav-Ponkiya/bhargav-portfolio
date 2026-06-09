@@ -9,7 +9,7 @@ const skillCategories = [
   },
   {
     name: "Frontend",
-    skills: ["React.js", "Next.js", "Redux", "Context API", "Tailwind CSS", "React Query"],
+    skills: ["React.js", "Next.js", "Redux", "Tailwind CSS", "React Query"],
   },
   {
     name: "Backend",
@@ -24,16 +24,16 @@ const skillCategories = [
     skills: ["AWS (S3, Lambda, DynamoDB)", "Docker", "CI/CD", "Render", "Vercel"],
   },
   {
-    name: "Architecture & Protocols",
+    name: "Architecture",
     skills: ["Microservices", "Event-Driven Architecture", "RabbitMQ", "Nx Monorepo"],
   },
   {
-    name: "AI & LLM Integration",
-    skills: ["Azure OpenAI API", "Gemini API", "Claude API", "RAG", "Vector Embeddings", "SSE Streaming"],
+    name: "AI / LLM",
+    skills: ["Azure OpenAI", "Gemini", "Claude", "RAG", "Vector Embeddings", "Voice Agents", "Deepgram", "LiveKit"],
   },
   {
-    name: "Tools & Libraries",
-    skills: ["Git", "Postman", "JMeter", "Jira", "ClickUp", "Sequelize", "Mongoose", "TypeORM"],
+    name: "Tools",
+    skills: ["Git", "Postman", "JMeter", "Jira", "WebRTC", "SSE"],
   },
 ];
 

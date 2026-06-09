@@ -4,7 +4,24 @@ import { motion } from "framer-motion";
 import { Calendar, ExternalLink, MapPin } from "lucide-react";
 import Link from "next/link";
 
-const experiences = [
+interface ExperienceProject {
+  name: string;
+  tech: string;
+  desc: string;
+  links?: { name: string; url: string }[];
+}
+
+interface Experience {
+  company: string;
+  role: string;
+  duration: string;
+  location: string;
+  desc?: string;
+  points?: string[];
+  projects?: ExperienceProject[];
+}
+
+const experiences: Experience[] = [
   {
     company: "Upsquare Technologies",
     role: "Software Engineer",
@@ -14,18 +31,18 @@ const experiences = [
       {
         name: "SMG (Sway Me Good) -- Influencer Marketing Platform",
         tech: "Node.js, tRPC, GraphQL, AWS Lambda, DynamoDB, Nx Monorepo, Azure OpenAI API",
-        desc: "Contributed to an Nx monorepo of 25+ microservices; independently built two services end to end (Loyalty and Campaign-Auth-Score). Built an AI authenticity scoring engine using Azure OpenAI API that quantifies influencer-to-campaign fit and automates brand-team shortlisting via scheduled AWS Lambda jobs with results stored in DynamoDB.",
+        desc: "Contributed to an Nx monorepo of 25+ microservices; independently built two services end to end -- Loyalty and Campaign-Auth-Score. Built an AI authenticity scoring engine (Azure OpenAI API) that quantifies influencer-to-campaign fit and automates brand-team shortlisting via scheduled AWS Lambda jobs with results stored in DynamoDB.",
         links: [{ name: "Platform", url: "https://swaymegood.com/" }]
       },
       {
         name: "VERSYS -- Compliance & Document Management System",
         tech: "Node.js, Express.js, Claude Sonnet, Puppeteer, AWS S3, React, React Query, Tailwind CSS",
-        desc: "Built a centralised compliance portal managing project records, worker lists, and certificates across multiple construction sites; implemented colour-coded certification expiry flags. Engineered an AI document pipeline combining Salus API with Claude Sonnet to auto-generate safety docs (SSSP, EMP, PHA) rendered as PDF via Puppeteer to AWS S3. Applied React Query caching with stale-time tuning to reduce unnecessary network load.",
+        desc: "Built a centralised compliance portal managing project records, worker lists, and certificates across multiple construction sites; implemented colour-coded certification expiry flags to surface at-risk workers instantly. Engineered an AI document generation pipeline combining Salus API with Claude Sonnet to auto-generate SSSP, EMP, and PHA safety documents; rendered to PDF via Puppeteer and stored on AWS S3. Applied React Query caching with stale-time tuning to eliminate redundant API calls across all dashboard views, reducing unnecessary network load on repeated navigations.",
       },
       {
         name: "Spinoto -- Mechanic Booking Platform",
         tech: "React, Next.js, Tailwind CSS",
-        desc: "Delivered the admin panel and public landing page; led two junior developers, reviewed PRs, and drove the product to a stable production release. Improved performance by splitting components into Server and Client Components, reducing bundle sizes, and scoping API calls to eliminate data overfetching.",
+        desc: "Delivered the admin panel and public landing page; led two junior developers, reviewed PRs, and drove the product to a stable production release resolving a backlog of UI issues. Improved frontend performance by splitting components into Next.js Server and Client Components, reducing client-side JS bundle size; scoped API calls to only the data each view required, eliminating overfetching.",
         links: [
           { name: "Website", url: "https://spinoto.com" },
           { name: "Admin", url: "https://admin.spinoto.com/login" }
@@ -34,7 +51,7 @@ const experiences = [
       {
         name: "SignPe -- Payments Platform Backend",
         tech: "NestJS, PostgreSQL, TypeORM",
-        desc: "Architected a Role-Based Access Control (RBAC) system with a normalised PostgreSQL schema (roles, permissions, role-permission mapping) for scalable, fine-grained access management. Built reusable NestJS guards and decorators (@Roles(), @Permissions()) enabling declarative, route-level access control.",
+        desc: "Architected a Role-Based Access Control (RBAC) system with a normalised PostgreSQL schema (roles, permissions, role-permission mapping) for scalable, fine-grained access management. Built reusable NestJS guards and decorators (@Roles(), @Permissions()) enabling declarative, route-level access control across all API endpoints.",
         links: [{ name: "Platform", url: "https://signpe.com/" }]
       }
     ],
@@ -44,7 +61,12 @@ const experiences = [
     role: "Programmer Analyst",
     duration: "Dec 2022 – Jan 2026",
     location: "Ahmedabad, Gujarat",
-    desc: "Developed and maintained internal MERN-stack web applications supporting QA automation workflows, used daily by multiple engineering teams. Shipped three Employee Management Portal modules from scratch -- Flatmate (room-sharing), Wall of Fame (peer recognition), and Birthday Board (team celebrations) -- using Node.js, Express, PostgreSQL, and React. Integrated Socket.io for real-time tracking of automation script progress and live activity feeds, improving visibility for QA teams. Optimised database throughput via Sequelize connection pooling and query tuning; reduced unnecessary re-renders using React.memo and useCallback. Offloaded CPU-intensive tasks using Worker Threads; benchmarked API performance under concurrent load with JMeter to identify and resolve bottlenecks.",
+    points: [
+      "Developed and maintained internal web applications (Node.js, Express, PostgreSQL, React) supporting QA automation workflows, used daily by multiple engineering teams.",
+      "Integrated Socket.io for real-time tracking of automation script progress and live activity feeds, improving visibility for QA teams.",
+      "Optimised database throughput via connection pooling and query tuning; reduced unnecessary re-renders using React.memo and useCallback.",
+      "Offloaded CPU-intensive tasks using Worker Threads; benchmarked API performance under concurrent load with JMeter to identify and resolve bottlenecks."
+    ]
   },
   {
     company: "Codient Tech",
@@ -55,7 +77,7 @@ const experiences = [
       {
         name: "Dausto -- E-Commerce Platform",
         tech: "TypeScript, Express.js, MongoDB, React + Vite (Admin), Next.js (Storefront), Formik, Zod, MSG91",
-        desc: "Built core e-commerce modules (Dashboard, SEO Management, Orders, Testimonials, and Wishlist) across the React + Vite admin panel and Next.js storefront, backed by a TypeScript + Express + MongoDB API. Implemented Formik + Zod for form validation and MSG91 API for OTP-based auth and SMS notifications; collaborated in a 6-member agile team using Jira and ClickUp.",
+        desc: "Built core e-commerce modules -- Dashboard, SEO Management, Orders, Testimonials, and Wishlist -- across the React + Vite admin panel and Next.js storefront, backed by a TypeScript + Express + MongoDB API. Implemented Formik + Zod for form validation and MSG91 API for OTP-based auth and SMS notifications; collaborated in a 6-member agile team using Jira and ClickUp.",
         links: [
           { name: "Storefront", url: "https://dausto.com" },
           { name: "Admin", url: "https://admin.dausto.com" }
@@ -115,6 +137,16 @@ export default function Experience() {
                 <div className="lg:w-2/3">
                   {exp.desc && (
                     <p className="text-gray-300 leading-relaxed mb-6 text-lg">{exp.desc}</p>
+                  )}
+
+                  {exp.points && (
+                    <ul className="list-disc list-outside space-y-3 pl-5 text-gray-300 text-base md:text-lg">
+                      {exp.points.map((point, pIdx) => (
+                        <li key={pIdx} className="leading-relaxed hover:text-white transition-colors duration-200">
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
                   )}
 
                   {exp.projects && (

@@ -23,6 +23,15 @@ const projects = [
     liveLink: "https://pulse-board-bhargavp.vercel.app/",
     githubLink: "https://github.com/Bhargav-Ponkiya/PulseBoard",
     color: "from-accent-secondary to-purple-600"
+  },
+  {
+    title: "NovaTel",
+    subtitle: "AI Voice Agent with Self-Healing Prompt Pipeline",
+    description: "A real-time AI voice agent (persona: Sarah) for telecom billing support built with Deepgram STT, Gemini LLM, and Deepgram Aura TTS; audio transport is handled via LiveKit WebRTC with Socket.IO for control events, achieving ~1.3s perceived latency. Features an autonomous self-healing prompt pipeline: post-call Gemini QA analysis evaluates and scores the call; if the score is under 90, a meta-prompt automatically generates a surgical prompt patch stored in MongoDB and auto-loaded for the next call.",
+    tech: ["Node.js", "React", "TypeScript", "LiveKit", "WebRTC", "Deepgram STT/TTS", "Gemini API", "MongoDB", "Socket.IO"],
+    liveLink: "https://voice-agent-bhargavp.vercel.app",
+    githubLink: "https://github.com/Bhargav-Ponkiya/voice_agent",
+    color: "from-indigo-500 to-purple-600"
   }
 ];
 
@@ -41,7 +50,7 @@ export default function Projects() {
           <div className="w-20 h-1 bg-gradient-to-r from-accent to-accent-secondary mx-auto rounded-full mb-8"></div>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, idx) => (
             <motion.div
               key={project.title}
