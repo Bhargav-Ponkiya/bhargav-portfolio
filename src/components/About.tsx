@@ -1,31 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code2, Server, Cpu, GraduationCap, Languages } from "lucide-react";
+import { GraduationCap, Languages, CheckCircle2, UserCheck, Layers, Globe } from "lucide-react";
 
 export default function About() {
-  const cards = [
-    {
-      title: "Frontend Engineering",
-      description: "Building responsive, highly-interactive, and accessible user interfaces using React.js, Next.js, and Tailwind CSS.",
-      icon: <Code2 className="w-8 h-8 text-accent" />,
-    },
-    {
-      title: "Backend & Architecture",
-      description: "Designing scalable microservices, REST & GraphQL APIs using Node.js, NestJS, PostgreSQL, and event-driven patterns.",
-      icon: <Server className="w-8 h-8 text-accent-secondary" />,
-    },
-    {
-      title: "AI Integration",
-      description: "Embedding LLMs (Claude, OpenAI, Gemini) and vector databases (pgvector) to build intelligent, autonomous systems.",
-      icon: <Cpu className="w-8 h-8 text-blue-400" />,
-    },
-  ];
-
   return (
     <section id="about" className="py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
+        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -33,88 +16,128 @@ export default function About() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-accent to-accent-secondary mx-auto rounded-full mb-8"></div>
-          <p className="text-gray-400 max-w-3xl mx-auto text-lg leading-relaxed">
-            I am a passionate Full-Stack Engineer based in Ahmedabad, Gujarat, with <span className="text-white font-medium">4+ years of professional experience</span> building scalable web applications and AI-integrated systems. I excel at architecting robust microservices, designing event-driven backends, and shipping LLM-powered features across production environments.
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono mb-4">
+            <UserCheck className="w-3.5 h-3.5" />
+            <span>4+ Years · Full-Stack Systems Engineer</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+            About Me
+          </h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-emerald-400 via-cyan-400 to-violet-500 mx-auto rounded-full mb-6"></div>
+          <p className="text-slate-300 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
+            I build production-grade backends, real-time AI systems, and cloud-native architectures — and I take full ownership of every layer, from the first line of code to the last deployment.
           </p>
         </motion.div>
 
-        {/* Expertise Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          {cards.map((card, index) => (
-            <motion.div
-              key={card.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="glass glass-hover p-8 rounded-2xl flex flex-col items-center text-center"
-            >
-              <div className="p-4 bg-white/5 rounded-2xl mb-6">
-                {card.icon}
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-white">{card.title}</h3>
-              <p className="text-gray-400 leading-relaxed">
-                {card.description}
-              </p>
-            </motion.div>
-          ))}
-        </div>
+        {/* Bento Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
 
-        {/* Education & Languages */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-          {/* Education Card */}
+          {/* What I Do — full width left card */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6 }}
-            className="glass p-8 rounded-2xl border border-white/10"
+            transition={{ duration: 0.5 }}
+            className="lg:col-span-7 glass-card p-7 sm:p-9 rounded-2xl border border-white/10 hover:border-emerald-500/25 transition-all"
           >
-            <div className="flex items-center space-x-4 mb-6">
-              <div className="p-3 bg-accent/15 rounded-xl text-accent">
-                <GraduationCap className="w-6 h-6" />
+            <div className="flex items-center gap-3 mb-6">
+              <div className="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
+                <Layers className="w-5 h-5" />
               </div>
-              <h3 className="text-2xl font-bold text-white">Education</h3>
+              <h3 className="text-xl font-bold text-white">What I Build</h3>
             </div>
-            <div className="border-l border-white/15 pl-4 ml-2 space-y-4">
-              <div>
-                <h4 className="text-lg font-bold text-white">Parul Institute of Technology</h4>
-                <p className="text-accent text-sm font-semibold">B.Tech in Computer Science and Engineering</p>
-                <div className="flex justify-between items-center text-gray-400 text-sm mt-1">
-                  <span>Graduated: 2019 -- 2023</span>
-                  <span className="font-mono text-accent-secondary">CGPA: 8.2</span>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-6">
+              {[
+                "Scalable REST & GraphQL APIs with clean service layers",
+                "Real-time voice pipelines (STT → LLM → TTS)",
+                "Event-driven microservices with RabbitMQ & queues",
+                "Full-stack apps with React/Next.js frontends",
+                "Cloud infrastructure on AWS — EC2, S3, CloudFront, Lambda",
+                "CI/CD pipelines & automated deployments",
+                "AI-integrated features: RAG, embeddings, prompt engineering",
+                "Third-party integrations: ATS systems, webhooks, OAuth",
+              ].map((item) => (
+                <div key={item} className="flex items-start gap-2.5 text-sm text-slate-300">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                  <span>{item}</span>
                 </div>
-              </div>
+              ))}
             </div>
-          </motion.div>
 
-          {/* Languages Card */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6 }}
-            className="glass p-8 rounded-2xl border border-white/10"
-          >
-            <div className="flex items-center space-x-4 mb-6">
-              <div className="p-3 bg-accent-secondary/15 rounded-xl text-accent-secondary">
-                <Languages className="w-6 h-6" />
-              </div>
-              <h3 className="text-2xl font-bold text-white">Languages</h3>
-            </div>
-            <div className="flex flex-wrap gap-3 mt-4">
-              {["English", "Gujarati", "Hindi"].map((lang) => (
-                <span 
-                  key={lang}
-                  className="px-4 py-2 text-sm font-medium text-white bg-white/5 border border-white/10 rounded-xl hover:border-accent-secondary/50 transition-colors duration-300 cursor-default"
-                >
-                  {lang}
+            <div className="pt-5 border-t border-white/[0.07] flex flex-wrap gap-2">
+              {["TypeScript", "Node.js", "NestJS", "React", "Next.js", "PostgreSQL", "Redis", "AWS", "Docker"].map((pill) => (
+                <span key={pill} className="text-xs font-mono px-2.5 py-1 rounded-md bg-white/[0.04] text-slate-300 border border-white/5">
+                  {pill}
                 </span>
               ))}
             </div>
           </motion.div>
+
+          {/* Right column — stacked cards */}
+          <div className="lg:col-span-5 flex flex-col gap-6">
+
+            {/* Education */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="glass-card p-7 rounded-2xl border border-white/10 hover:border-indigo-500/25 transition-all"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2.5 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400">
+                  <GraduationCap className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-bold text-white">Education</h3>
+              </div>
+
+              <div className="bg-black/20 p-4 rounded-xl border border-white/5">
+                <h4 className="text-base font-bold text-white">Parul Institute of Technology</h4>
+                <p className="text-sm text-emerald-400 font-medium mt-0.5">B.Tech — Computer Science &amp; Engineering</p>
+                <div className="flex justify-between items-center text-xs text-slate-400 font-mono mt-3 pt-2 border-t border-white/5">
+                  <span>2019 – 2023</span>
+                  <span className="text-cyan-400 font-semibold">CGPA: 8.2 / 10.0</span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Languages & Communication */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: 0.15 }}
+              className="glass-card p-7 rounded-2xl border border-white/10 hover:border-violet-500/25 transition-all"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2.5 rounded-xl bg-violet-500/10 border border-violet-500/20 text-violet-400">
+                  <Languages className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-bold text-white">Languages &amp; Communication</h3>
+              </div>
+
+              <div className="bg-black/20 p-4 rounded-xl border border-white/5">
+                <div className="flex flex-wrap gap-2 mb-3">
+                  <span className="px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold">
+                    English (Fluent)
+                  </span>
+                  <span className="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-slate-300 text-xs">
+                    Gujarati (Native)
+                  </span>
+                  <span className="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-slate-300 text-xs">
+                    Hindi (Fluent)
+                  </span>
+                </div>
+                <div className="flex items-start gap-2 text-xs text-slate-300 leading-relaxed">
+                  <Globe className="w-3.5 h-3.5 text-violet-400 flex-shrink-0 mt-0.5" />
+                  <span>Comfortable with async work, technical walkthroughs, and written documentation for distributed international teams.</span>
+                </div>
+              </div>
+            </motion.div>
+
+          </div>
+
         </div>
 
       </div>

@@ -1,0 +1,198 @@
+\documentclass[10pt]{resume}
+\usepackage{fontawesome5}
+\usepackage[left=0.45in,top=0.32in,right=0.45in,bottom=0.32in]{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{lmodern}
+\definecolor{lightblue}{RGB}{0, 102, 204}
+\newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}}
+\newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
+\name{Bhargav Ponkiya}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=lightblue
+}
+
+\address{
+  \small
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} l l l l l}
+    {\faIcon[solid]{envelope}}~\href{mailto:bhargavponkiya7@gmail.com}{bhargavponkiya7@gmail.com} &
+    {\faIcon[solid]{phone-alt}}~+91~99791~66390 &
+    {\faIcon[brands]{linkedin}}~\href{https://www.linkedin.com/in/bhargav-p-a0ab5a200/}{LinkedIn} &
+    {\faIcon[brands]{github}}~\href{https://github.com/Bhargav-Ponkiya}{GitHub} &
+    {\faIcon[solid]{globe}}~\href{https://bhargav-ponkiya-dev.vercel.app/}{Portfolio}
+  \end{tabular*}
+  \vspace{-0.65em}
+}
+
+\begin{document}
+
+% ================================================================
+%  PROFESSIONAL SUMMARY
+% ================================================================
+\begin{rSection}{Summary}
+Full-Stack Engineer and Tech Lead with \textbf{4+ years of experience} architecting scalable web applications, real-time voice AI systems, and cloud-native backends. Proven track record directing technical architecture from rapid proof-of-concept to production, optimizing AWS cloud infrastructure, and integrating third-party enterprise platforms. Experienced in leading international technical walkthroughs and shipping systems with \textbf{TypeScript, Node.js, NestJS, Next.js, Python, AWS}, and production LLM APIs (\textbf{OpenAI Realtime, Gemini, Claude}).
+\end{rSection}
+\vspace{-0.55em}
+
+% ================================================================
+%  SKILLS
+% ================================================================
+\begin{rSection}{Skills}
+\begin{tabular}{@{} >{\bfseries}l @{\hspace{3.5ex}} l }
+Languages        & JavaScript, TypeScript, Python, SQL \\[0.1ex]
+Frontend         & React.js, Next.js, Redux, Tailwind CSS, React Query \\[0.1ex]
+Backend          & Node.js, Express.js, NestJS, GraphQL, REST APIs, tRPC, WebSockets \\[0.1ex]
+Databases        & PostgreSQL, MySQL, MongoDB, DynamoDB, Redis, pgvector \\[0.1ex]
+Cloud \& DevOps  & AWS (S3, EC2, CloudFront, CloudWatch, Lambda), Docker, GitHub Actions, Render, Vercel \\[0.1ex]
+Architecture     & Microservices, Event-Driven Architecture, RabbitMQ, Nx Monorepo \\[0.1ex]
+AI / LLM         & OpenAI Realtime API, Gemini, Claude, ElevenLabs, Deepgram, LiveKit, RAG, pgvector \\[0.1ex]
+Tools            & Git, Postman, JMeter, Jira, WebRTC, SSE, Odoo ATS, Recruitee ATS
+\end{tabular}
+\end{rSection}
+\vspace{-0.55em}
+
+% ================================================================
+%  EXPERIENCE — PAGE 1
+% ================================================================
+\begin{rSection}{Experience}
+
+% ---------------------------------------------------------------
+%  COMPANY 1 — GRAIXL (Current)
+% ---------------------------------------------------------------
+{\large\textbf{GRAIXL}} \hfill \textbf{July 2026 -- Present}\\[-0.1em]
+{\small Tech Lead $|$ Remote}
+\begin{itemize}[leftmargin=1.4em, itemsep=-0.38em, topsep=0.12em]
+  \item Provide \textbf{technical leadership} driving end-to-end architecture, core development, and production system releases across web applications and real-time AI services.
+  \item Architected a real-time multilingual voice AI pipeline integrating \textbf{OpenAI Realtime API, ElevenLabs, Deepgram STT/TTS}, and \textbf{LiveKit Cloud (WebRTC)}, achieving sub-second perceived latency.
+  \item Implemented candidate video verification via \textbf{periodic random face-frame capture}; conducted conversational video AI avatar POCs with \textbf{Simli} and \textbf{ProtoFace}.
+  \item Decoupled compute-intensive background workloads using \textbf{RabbitMQ} message queues for fully asynchronous, non-blocking processing.
+  \item Managed AWS cloud infrastructure (\textbf{S3, CloudFront, EC2, CloudWatch}) and CI/CD automation; audited cloud assets and decommissioned idle instances to save \textbf{$\sim$\$150/month}.
+  \item Integrated \textbf{Odoo ATS} and \textbf{Recruitee ATS} via webhooks and REST APIs; conducted direct technical walkthroughs and product onboarding for international client teams.
+\end{itemize}
+
+\vspace{0.08em}
+
+% ---------------------------------------------------------------
+%  COMPANY 2 — Upsquare Technologies
+% ---------------------------------------------------------------
+{\large\textbf{Upsquare Technologies}} \hfill \textbf{Feb 2026 -- Jul 2026}\\[-0.1em]
+{\small Software Engineer $|$ Ahmedabad, Gujarat}
+
+% --- SMG ---
+\vspace{0.05em}
+\textbf{\small\href{https://swaymegood.com/}{SMG (Sway Me Good) -- Influencer Marketing Platform}}
+{\small\textit{$|$ Node.js, tRPC, GraphQL, AWS Lambda, DynamoDB, Nx Monorepo, Azure OpenAI API}}
+\begin{itemize}[leftmargin=1.4em, itemsep=-0.38em, topsep=0.04em]
+  \item Built \textit{Loyalty} and \textit{Campaign-Auth-Score} services in an \textbf{Nx monorepo (25+ microservices)}; engineered an AI authenticity scoring engine (\textbf{Azure OpenAI API}) with scheduled \textbf{AWS Lambda} jobs and \textbf{DynamoDB}.
+  \item Designed typed API contracts using \textbf{tRPC} and \textbf{GraphQL}, optimizing data-fetching throughput across analytics dashboards.
+\end{itemize}
+
+% --- VERSYS ---
+\vspace{0.04em}
+\textbf{\small VERSYS -- Compliance \& Document Management System}
+{\small\textit{$|$ Node.js, Express.js, Claude Sonnet, Puppeteer, AWS S3, React, React Query, Tailwind CSS}}
+\begin{itemize}[leftmargin=1.4em, itemsep=-0.38em, topsep=0.04em]
+  \item Built a centralised compliance portal and engineered an automated document generation pipeline combining \textbf{Salus API + Claude Sonnet} to render safety PDFs via \textbf{Puppeteer} to \textbf{AWS S3}; tuned \textbf{React Query} caching to eliminate redundant API requests.
+\end{itemize}
+
+\end{rSection}
+
+% ================================================================
+%  PAGE 2
+% ================================================================
+\newpage
+
+\begin{rSection}{Experience (Continued)}
+
+% ---------------------------------------------------------------
+%  COMPANY 3 — Meditab Software
+% ---------------------------------------------------------------
+{\large\textbf{Meditab Software}} \hfill \textbf{Dec 2022 -- Jan 2026}\\[-0.1em]
+{\small Programmer Analyst $|$ Ahmedabad, Gujarat}
+\begin{itemize}[leftmargin=1.4em, itemsep=-0.38em, topsep=0.12em]
+  \item Developed and maintained internal web applications (\textbf{Node.js, Express, PostgreSQL, React}) supporting QA automation workflows used daily by engineering teams.
+  \item Integrated \textbf{Socket.io} for live script execution tracking and activity feeds, improving real-time visibility for QA teams.
+  \item Optimised database throughput via \textbf{connection pooling} and query tuning; reduced redundant re-renders using \textbf{React.memo} and \textbf{useCallback}.
+  \item Offloaded computational workloads using \textbf{Worker Threads}; benchmarked concurrent API performance with \textbf{JMeter} to identify and resolve throughput bottlenecks.
+\end{itemize}
+
+\vspace{0.08em}
+
+% ---------------------------------------------------------------
+%  COMPANY 4 — Codient Tech
+% ---------------------------------------------------------------
+{\large\textbf{Codient Tech}} \hfill \textbf{May 2022 -- Oct 2022}\\[-0.1em]
+{\small Full-Stack Developer $|$ Remote}
+\vspace{0.05em}
+
+\textbf{\small\href{https://dausto.com}{Dausto -- E-Commerce Platform}}
+{\small\textit{$|$ TypeScript, Express.js, MongoDB, React + Vite (Admin), Next.js (Storefront), Formik, Zod, MSG91}}
+\begin{itemize}[leftmargin=1.4em, itemsep=-0.38em, topsep=0.04em]
+  \item Built core e-commerce modules across \href{https://admin.dausto.com}{React + Vite admin panel} and \href{https://dausto.com}{Next.js storefront} backed by a TypeScript + Express + MongoDB API.
+  \item Implemented \textbf{Formik + Zod} form validation and \textbf{MSG91} OTP authentication for customer onboarding and automated order notifications.
+\end{itemize}
+
+\end{rSection}
+\vspace{-0.5em}
+
+% ================================================================
+%  PERSONAL PROJECTS (3 Featured Showcases)
+% ================================================================
+\begin{rSection}{Personal Projects}
+
+% --- NovaTel ---
+\textbf{\small\href{https://voice-agent-bhargavp.vercel.app}{NovaTel -- AI Voice Agent with Self-Healing Prompt Pipeline}}
+{\small $|$ \href{https://github.com/Bhargav-Ponkiya/voice_agent}{GitHub}}\\
+{\small\textit{Node.js, React, TypeScript, LiveKit, WebRTC, Deepgram STT/TTS, Gemini API, MongoDB, Socket.IO}}
+\begin{itemize}[leftmargin=1.4em, itemsep=-0.38em, topsep=0.04em]
+  \item Built a real-time telecom billing voice agent with \textbf{Deepgram STT}, \textbf{Gemini LLM}, and \textbf{Deepgram Aura TTS}; audio transport via \textbf{LiveKit WebRTC} with \textbf{Socket.IO} control events ($\sim$1.3s latency).
+  \item Engineered an autonomous self-healing prompt pipeline: post-call Gemini QA rubric evaluation generates surgical patches into MongoDB, auto-loaded for subsequent calls.
+\end{itemize}
+
+\vspace{0.06em}
+
+% --- n8n HITL ---
+\textbf{\small\href{https://github.com/Bhargav-Ponkiya/n8n-hitl-ai-agent}{Enterprise AI Agent -- Cryptographic Human-in-the-Loop (HITL) Governance}}
+{\small $|$ \href{https://github.com/Bhargav-Ponkiya/n8n-hitl-ai-agent}{GitHub}}\\
+{\small\textit{n8n, Local LLMs, HMAC Authentication, Webhooks, Docker, REST APIs}}
+\begin{itemize}[leftmargin=1.4em, itemsep=-0.38em, topsep=0.04em]
+  \item Built a self-hosted, zero-API-cost customer support pipeline in \textbf{n8n} using \textbf{local LLMs} for high-risk Tier-2 actions (refunds, credit adjustments).
+  \item Enforced a \textbf{cryptographic HMAC-signed HITL approval gate} preventing unauthorized financial execution or AI hallucinations.
+\end{itemize}
+
+\vspace{0.06em}
+
+% --- PulseBoard ---
+\textbf{\small\href{https://pulse-board-bhargavp.vercel.app/}{PulseBoard -- AI-Powered Developer Observability Platform}}
+{\small $|$ \href{https://github.com/Bhargav-Ponkiya/PulseBoard}{GitHub}}\\
+{\small\textit{NestJS Microservices, Next.js, MongoDB, PostgreSQL, Redis, RabbitMQ, SSE, Gemini API}}
+\begin{itemize}[leftmargin=1.4em, itemsep=-0.38em, topsep=0.04em]
+  \item Open-source Datadog alternative correlating downtime with GitHub commits and error logs; generates automated root-cause reports via \textbf{Gemini Flash}.
+  \item \textbf{4-service NestJS monorepo} over \textbf{RabbitMQ}; semantic log search via \textbf{MongoDB Atlas Vector Search (HNSW)}; \textbf{Redis SETNX} alert debouncing.
+\end{itemize}
+
+\end{rSection}
+\vspace{-0.5em}
+
+% ================================================================
+%  EDUCATION
+% ================================================================
+\begin{rSection}{Education}
+\textbf{Parul Institute of Technology} \hfill 2019 -- 2023 \\
+B.Tech in Computer Science and Engineering \hfill CGPA: 8.2 / 10.0
+\end{rSection}
+\vspace{-0.5em}
+
+% ================================================================
+%  LANGUAGES
+% ================================================================
+\begin{rSection}{Languages}
+English (Fluent) \quad $|$ \quad Gujarati (Native) \quad $|$ \quad Hindi (Fluent)
+\end{rSection}
+
+\end{document}

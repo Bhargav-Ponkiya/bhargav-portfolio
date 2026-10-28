@@ -1,105 +1,171 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Download, ArrowRight, BrainCircuit, Code, Database, Terminal } from "lucide-react";
+import { Download, ArrowRight, Cpu, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
+
+const metrics = [
+  { label: "Production Experience", value: "4+ Years", desc: "Full-stack systems & architecture" },
+  { label: "Engineering Leadership", value: "Tech Lead", desc: "End-to-end technical ownership" },
+  { label: "Real-Time Systems", value: "Voice AI", desc: "Sub-second streaming pipelines" },
+];
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+    <section className="relative min-h-[92vh] flex flex-col justify-center pt-24 pb-16 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          
-          {/* Text Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+          {/* Left Column */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-left"
+            transition={{ duration: 0.7 }}
+            className="lg:col-span-7 text-left"
           >
-            <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full glass border border-accent/30 text-accent mb-6">
-              <span className="relative flex h-3 w-3">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-accent"></span>
+            {/* Role Badge */}
+            <div className="inline-flex items-center space-x-2.5 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 mb-6 text-xs sm:text-sm font-mono backdrop-blur-md">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
-              <span className="text-sm font-medium">Available for new opportunities</span>
+              <span>Full-Stack &amp; Voice AI Engineer · 4+ Years</span>
             </div>
 
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 tracking-tight">
-              Hi, I&apos;m <br />
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent via-accent-secondary to-accent animate-gradient-x">
-                Bhargav Ponkiya
+            {/* Main Headline */}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
+              I Build Systems.{" "}
+              <span className="text-gradient-ai">
+                I Own the Outcome.
               </span>
             </h1>
-            
-            <p className="text-xl md:text-2xl text-gray-400 mb-8 max-w-2xl leading-relaxed">
-              Software Engineer specializing in <span className="text-white font-medium">AI Integration</span>, scalable architecture, and full-stack web development.
+
+            <p className="text-base sm:text-lg text-slate-300 mb-4 max-w-xl leading-relaxed">
+              Hi, I&apos;m <span className="text-white font-semibold">Bhargav Ponkiya</span>. I design and ship scalable backends, real-time AI pipelines, and cloud-native architectures — end to end, without hand-holding.
             </p>
 
-            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
-              <Link 
+            <p className="text-base text-slate-400 mb-10 max-w-xl leading-relaxed">
+              When I commit to something,{" "}
+              <span className="text-emerald-400 font-medium">I work like a machine</span> — no clock-watching, no half-measures. I take full ownership and see every challenge through to production.
+            </p>
+
+            {/* CTAs */}
+            <div className="flex flex-wrap items-center gap-4">
+              <Link
                 href="#projects"
-                className="group relative inline-flex items-center justify-center px-8 py-3 text-base font-semibold text-white transition-all duration-300 bg-accent rounded-full hover:bg-accent-hover shadow-[0_0_20px_rgba(59,130,246,0.4)] hover:shadow-[0_0_30px_rgba(59,130,246,0.6)]"
+                className="inline-flex items-center justify-center px-7 py-3.5 text-sm sm:text-base font-semibold text-black bg-emerald-400 hover:bg-emerald-300 rounded-xl transition-all shadow-[0_0_25px_rgba(52,211,153,0.35)] hover:shadow-[0_0_35px_rgba(52,211,153,0.5)] transform hover:-translate-y-0.5"
               >
-                <span>View My Work</span>
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                <span>View Projects</span>
+                <ArrowRight className="w-4 h-4 ml-2" />
               </Link>
-              
-              <a 
+
+              <Link
+                href="#philosophy"
+                className="inline-flex items-center justify-center px-6 py-3.5 text-sm sm:text-base font-semibold text-white bg-white/[0.04] hover:bg-white/[0.08] rounded-xl transition-all border border-white/10 hover:border-emerald-500/30 transform hover:-translate-y-0.5"
+              >
+                <Cpu className="w-4 h-4 mr-2 text-emerald-400" />
+                <span>How I Work</span>
+              </Link>
+
+              <a
                 href="/resume.pdf"
                 download
-                className="group relative inline-flex items-center justify-center px-8 py-3 text-base font-semibold text-white transition-all duration-300 glass rounded-full hover:bg-white/10"
+                className="inline-flex items-center justify-center px-5 py-3.5 text-sm sm:text-base font-medium text-slate-400 hover:text-white rounded-xl transition-colors hover:bg-white/5"
               >
-                <Download className="w-5 h-5 mr-2 group-hover:-translate-y-1 transition-transform" />
-                <span>Download CV</span>
+                <Download className="w-4 h-4 mr-2" />
+                <span>Resume</span>
               </a>
             </div>
           </motion.div>
 
-          {/* Visual Elements */}
-          <div className="relative hidden lg:flex justify-center items-center h-[500px]">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-              animate={{ opacity: 1, scale: 1, rotate: 0 }}
-              transition={{ duration: 1, type: "spring", stiffness: 50 }}
-              className="relative w-80 h-80 md:w-[22rem] md:h-[22rem]"
-            >
-              {/* Dynamic glowing background */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-accent via-purple-500 to-accent-secondary rounded-full blur-3xl opacity-30 animate-pulse"></div>
-              
-              {/* Image Container with premium glass border */}
-              <div className="relative w-full h-full rounded-full p-2 bg-gradient-to-br from-white/20 via-transparent to-white/5 backdrop-blur-sm border border-white/10 shadow-[0_0_40px_rgba(59,130,246,0.3)] z-10 overflow-hidden group">
-                <div className="w-full h-full rounded-full overflow-hidden relative">
-                  {/* Subtle inner shadow overlay */}
-                  <div className="absolute inset-0 border-4 border-black/20 rounded-full z-20 pointer-events-none"></div>
-                  <img
-                    src="/profile.jpg"
-                    alt="Bhargav Ponkiya"
-                    className="w-full h-full object-cover rounded-full bg-[#111] transform group-hover:scale-105 transition-transform duration-700 ease-out"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src = "https://ui-avatars.com/api/?name=Bhargav+Ponkiya&size=512&background=0D8ABC&color=fff";
-                    }}
-                  />
+          {/* Right Column — Clean Value Card */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.15 }}
+            className="lg:col-span-5 relative flex justify-center"
+          >
+            <div className="w-full max-w-md space-y-4">
+
+              {/* Profile card */}
+              <div className="glass-card p-6 rounded-2xl border border-white/10">
+                <div className="flex items-center gap-4 mb-5">
+                  <div className="relative w-16 h-16 rounded-xl overflow-hidden p-0.5 bg-gradient-to-br from-emerald-400 via-cyan-400 to-violet-500 flex-shrink-0">
+                    <img
+                      src="/profile.jpg"
+                      alt="Bhargav Ponkiya"
+                      className="w-full h-full object-cover rounded-[10px]"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src =
+                          "https://ui-avatars.com/api/?name=Bhargav+Ponkiya&size=256&background=34d399&color=0a0e1a";
+                      }}
+                    />
+                  </div>
+                  <div>
+                    <h3 className="text-white font-bold text-lg leading-tight">Bhargav Ponkiya</h3>
+                    <p className="text-emerald-400 text-xs font-mono mt-0.5">Full-Stack Engineer · Voice AI · Cloud</p>
+                    <p className="text-slate-400 text-xs mt-1">Gujarat, India — Remote</p>
+                  </div>
+                </div>
+
+                <div className="space-y-2.5">
+                  {[
+                    { label: "Specialization", value: "Backend · AI Systems · Cloud" },
+                    { label: "Approach", value: "Full ownership, end-to-end" },
+                    { label: "Open to", value: "Interesting engineering problems" },
+                  ].map((row) => (
+                    <div key={row.label} className="flex justify-between items-center text-xs font-mono py-2 border-b border-white/[0.05] last:border-0">
+                      <span className="text-slate-400">{row.label}</span>
+                      <span className="text-slate-200">{row.value}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
 
-              {/* Orbiting Elements */}
-              <motion.div 
-                animate={{ rotate: 360 }}
-                transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-[-50px] border border-white/5 rounded-full border-dashed pointer-events-none flex items-center justify-center z-0"
-              >
-                <div className="absolute -top-5 p-4 glass rounded-full shadow-lg shadow-accent/20 border border-accent/20">
-                  <Terminal className="w-6 h-6 text-accent" />
+              {/* Stack chip cloud */}
+              <div className="glass-card p-5 rounded-2xl border border-white/[0.08]">
+                <p className="text-xs font-mono text-slate-400 mb-3">Core stack</p>
+                <div className="flex flex-wrap gap-2">
+                  {["Node.js", "TypeScript", "React", "Next.js", "NestJS", "OpenAI", "LiveKit", "AWS", "PostgreSQL", "Redis"].map((tech) => (
+                    <span key={tech} className="text-[11px] font-mono px-2.5 py-1 rounded-lg bg-white/[0.04] text-slate-300 border border-white/[0.06] hover:border-emerald-500/30 hover:text-white transition-colors">
+                      {tech}
+                    </span>
+                  ))}
                 </div>
-                <div className="absolute -bottom-5 p-4 glass rounded-full shadow-lg shadow-accent-secondary/20 border border-accent-secondary/20">
-                  <Database className="w-6 h-6 text-accent-secondary" />
-                </div>
-              </motion.div>
-            </motion.div>
-          </div>
+              </div>
+
+              {/* Assessment invite — minimal */}
+              <div className="flex items-start gap-3 px-4 py-3 rounded-xl bg-emerald-500/8 border border-emerald-500/20 text-xs font-mono text-emerald-300">
+                <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                <span>Open to technical assessment tasks based on my experience</span>
+              </div>
+            </div>
+          </motion.div>
 
         </div>
+
+        {/* 4 Metrics Strip */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-14 pt-8 border-t border-white/[0.07]"
+        >
+          {metrics.map((item, idx) => (
+            <div key={idx} className="glass-panel p-4 sm:p-5 text-left border border-white/[0.06] hover:border-emerald-500/20 transition-colors">
+              <div className="text-2xl sm:text-3xl font-bold font-mono text-white mb-1">
+                {item.value}
+              </div>
+              <div className="text-xs sm:text-sm font-semibold text-emerald-400 mb-0.5">
+                {item.label}
+              </div>
+              <div className="text-xs text-slate-400">
+                {item.desc}
+              </div>
+            </div>
+          ))}
+        </motion.div>
+
       </div>
     </section>
   );

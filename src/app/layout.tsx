@@ -15,8 +15,8 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Bhargav Ponkiya | Software Engineer & AI Integrator",
-  description: "Portfolio of Bhargav Ponkiya, a Full-Stack Developer and AI Integrator specializing in scalable, modern web applications.",
+  title: "Bhargav Ponkiya | Tech Lead & Voice AI Systems Engineer",
+  description: "Portfolio of Bhargav Ponkiya, a Tech Lead and Full-Stack Systems Engineer specializing in real-time voice AI, distributed systems, and scalable cloud architectures.",
 };
 
 export default function RootLayout({
@@ -29,12 +29,12 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${outfit.variable} antialiased scroll-smooth`}
     >
-      <body className="min-h-screen bg-background text-foreground selection:bg-accent selection:text-white flex flex-col relative overflow-x-hidden">
-        {/* Background ambient glow */}
+      <body className="min-h-screen bg-background text-foreground flex flex-col relative overflow-x-hidden">
+        {/* Background ambient glow — deep navy blue */}
         <div className="fixed inset-0 z-[-1] pointer-events-none">
-          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-accent/20 blur-[120px] mix-blend-screen opacity-50 animate-blob"></div>
-          <div className="absolute top-[20%] right-[-10%] w-[35%] h-[35%] rounded-full bg-accent-secondary/20 blur-[120px] mix-blend-screen opacity-50 animate-blob animation-delay-2000"></div>
-          <div className="absolute bottom-[-10%] left-[20%] w-[40%] h-[40%] rounded-full bg-accent/10 blur-[120px] mix-blend-screen opacity-50 animate-blob animation-delay-4000"></div>
+          <div className="absolute top-[-5%] left-[-5%] w-[50%] h-[55%] rounded-full bg-blue-600/12 blur-[180px] animate-pulse-slow"></div>
+          <div className="absolute top-[30%] right-[-8%] w-[42%] h-[42%] rounded-full bg-emerald-600/8 blur-[160px]"></div>
+          <div className="absolute bottom-[-5%] left-[15%] w-[60%] h-[40%] rounded-full bg-indigo-600/8 blur-[200px]"></div>
         </div>
 
         <Header />
